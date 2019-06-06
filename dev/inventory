@@ -5,6 +5,3 @@ ei_node_02 ansible_host=192.168.50.82 ansible_user=ansible
 [ei:children]
 ei_node_01
 ei_node_02
-
-[all:children]
-ei
