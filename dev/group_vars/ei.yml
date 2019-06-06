@@ -23,7 +23,7 @@ product_version: 6.5.0
 product_path: /opt/wso2
 product_archive_deb: wso2ei-linux-installer-x64-6.5.0.deb
 product_package_location: files
-jdbc_driver: mysql-connector-java-5.1.45-bin.jar
+jdbc_driver: mysql-connector-java-5.1.47-bin.jar
 
 # Host name to be used for the Carbon management console.
 mgt_hostname: dev-ei01.demo.com
@@ -88,18 +88,6 @@ wso2_user_db_username: regadmin
 wso2_user_db_password: regadmin
 wso2_user_db_name: WSO2_USER_DB
 wso2_user_db_driver_class_name: com.mysql.jdbc.Driver
-
-# KeyStore which will be used for encrypting/decrypting passwords and other sensitive information.
-keystore_location: ${carbon.home}/repository/resources/security/wso2carbon.jks
-keystore_type: JKS
-keystore_password: wso2carbon
-keystore_alias: wso2carbon
-keystore_key_password: wso2carbon
-
-# System wide trust-store which is used to maintain the certificates of all the trusted parties.
-truststore_location: ${carbon.home}/repository/resources/security/client-truststore.jks
-truststore_type: JKS
-truststore_password: wso2carbon
 
 hazelcast_cluster_enabled: true
 hazelcast_cluster_membership_scheme: wka
