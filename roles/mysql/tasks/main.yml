@@ -1,0 +1,32 @@
+# MySQL related things
+---
+  - block:
+    - name: Adds Python MySQL support on Debian/Ubuntu
+      apt: pkg="python-mysqldb" state=present
+      when: ansible_os_family == 'Debian'
+
+    # DB Creation of REGISTRY_LOCAL3 DB
+    - name: Create a new database with name 'REGISTRY_LOCAL3'
+      mysql_db:
+        login_host: "{{mysql_db_host}}"
+        login_port: "{{mysql_db_port}}"
+        login_password: "{{mysql_db_root_password}}"
+        login_user: "{{mysql_db_root_user}}"
+        name: REGISTRY_LOCAL3
+        state: present
+
+    - name: Copy REGISTRY_LOCAL3 database template
+      copy:
+        src: "{{ product_package_location }}/{{ mysql_localregdb_script }}"
+        dest: "{{ ansible_home }}/{{ mysql_localregdb_script }}"
+        mode: 0755
+
+    - name: Source/import the mysql_localregdb_script
+      mysql_db:
+       name: REGISTRY_LOCAL3
+       state: import
+       target: "{{ ansible_home }}/{{ mysql_localregdb_script }}"
+
+    become: true
+    become_method: sudo
+    become_user: root
