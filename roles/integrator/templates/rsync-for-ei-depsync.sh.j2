@@ -23,8 +23,8 @@ echo $SCRIPTPATH
   
 for x in `cat ${SCRIPTPATH}/nodes-list.txt`
 do
-echo ================================================== >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
+echo 1================================================== >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
 echo Syncing $x;
-rsync --delete -arve "ssh -o StrictHostKeyChecking=no" $ei_server_dir $x >> $ei_home_folder_path$/carbon-rsync-logs/logs.txt
-echo ================================================== >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
+rsync --delete -arve "ssh -i /home/wso2carbon/.ssh/id_rsa -o StrictHostKeyChecking=no" $ei_server_dir $x >> $ei_home_folder_path/carbon-rsync-logs/logs.txt
+echo 2================================================== >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
 done

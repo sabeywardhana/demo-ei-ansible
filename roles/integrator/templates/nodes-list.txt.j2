@@ -1,4 +1,4 @@
 {% for host in groups['ei'] %}
 {% set member_ip = hostvars[host]['ansible_eth1']['ipv4']['address'] %}
-{{ rsync_user }}@{{ member_ip }}:{{ setup_path }}/{{ product_name }}/{{ product_version }}/repository/deployment/server
+{{ wso2_user }}@{{ member_ip }}:{{ setup_path }}/{{ product_name }}/{{ product_version }}/repository/deployment/server
 {% endfor %}
