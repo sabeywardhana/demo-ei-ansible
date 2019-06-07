@@ -28,3 +28,5 @@ hostname: dev-ei01.demo.com
 ports_offset: 0
 
 wso2_local_reg_db_name: REGISTRY_LOCAL1
+
+userstore_add_admin: true
