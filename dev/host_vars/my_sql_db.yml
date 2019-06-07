@@ -3,6 +3,7 @@ mysql_db_host: dev-mysqldb.demo.com
 mysql_db_port: 3306
 mysql_db_root_user: root
 mysql_db_root_password: root
+mysql_db_name: REGISTRY_LOCAL3
 
 ansible_home: /home/ansible
 mysql_file_location: files

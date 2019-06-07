@@ -1,0 +1,30 @@
+#!/bin/sh
+ei_home_folder_path={{ setup_path }}/{{ product_name }}/{{ product_version }}
+ei_server_dir=ei_home_folder_path/repository/deployment/server/
+  
+#delete the lock on exit
+trap 'rm -rf {{ ei_home_folder_path }}/depsync-lock' EXIT
+  
+mkdir -p {{ ei_home_folder_path }}/carbon-rsync-logs/
+  
+#keep a lock to stop parallel runs
+if mkdir {{ ei_home_folder_path }}/depsync-lock; then
+  echo "Locking succeeded" >&2
+else
+  echo "Lock failed - exit" >&2
+  exit 1
+fi
+  
+#get the nodes-list.txt
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd`
+popd > /dev/null
+echo $SCRIPTPATH
+  
+for x in `cat ${SCRIPTPATH}/nodes-list.txt`
+do
+echo ================================================== >> {{ ei_home_folder_path }}/carbon-rsync-logs/logs.txt;
+echo Syncing $x;
+rsync --delete -arve "ssh -o StrictHostKeyChecking=no" $ei_server_dir $x >> {{ ei_home_folder_path }}/carbon-rsync-logs/logs.txt
+echo ================================================== >> {{ ei_home_folder_path }}/carbon-rsync-logs/logs.txt;
+done

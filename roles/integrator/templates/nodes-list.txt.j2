@@ -1,0 +1,6 @@
+{% for host in groups['ei'] %}
+{% set member_ip = hostvars[host]['ansible_eth1']['ipv4']['address'] %}
+{% if (ansible_eth1.ipv4.address != member_ip) %}
+{{ rsync_user }}@{{ member_ip }}:{{ setup_path }}/{{ product_name }}/{{ product_version }}/repository/deployment/server
+{% endif %}
+{% endfor %}

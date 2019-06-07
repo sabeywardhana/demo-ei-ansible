@@ -95,3 +95,6 @@ wso2_user_db_driver_class_name: com.mysql.jdbc.Driver
 hazelcast_cluster_enabled: true
 hazelcast_cluster_membership_scheme: wka
 
+rsync_user: ansible
+
+

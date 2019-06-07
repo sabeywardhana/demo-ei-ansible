@@ -12,7 +12,7 @@
         login_port: "{{mysql_db_port}}"
         login_password: "{{mysql_db_root_password}}"
         login_user: "{{mysql_db_root_user}}"
-        name: REGISTRY_LOCAL3
+        name: "{{mysql_db_name}}"
         state: present
 
     - name: Copy REGISTRY_LOCAL3 database template
@@ -27,7 +27,7 @@
         login_port: "{{mysql_db_port}}"
         login_password: "{{mysql_db_root_password}}"
         login_user: "{{mysql_db_root_user}}"
-        name: REGISTRY_LOCAL3
+        name:  "{{mysql_db_name}}"
         state: import
         target: "{{ ansible_home }}/{{ mysql_localregdb_script }}"
 

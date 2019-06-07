@@ -1,0 +1,12 @@
+---
+  - name: "Copy the rsync script"
+    template:
+      src: rsync-for-ei-depsync.sh.j2
+      dest: "{{ setup_path }}/{{ product_name }}/{{ product_version }}/rsync-for-ei-depsync.sh"
+      mode: 0755
+
+  - name: "Copy the node list for rsync"
+    template:
+      src: nodes-list.txt.j2
+      dest: "{{ setup_path }}/{{ product_name }}/{{ product_version }}/nodes-list.txt"
+      mode: 0755
