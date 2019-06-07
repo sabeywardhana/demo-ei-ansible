@@ -452,7 +452,7 @@
             <parameter name="mcastBindAddress">127.0.0.1</parameter>
         -->
         <!-- The host name or IP address of this member -->
-        <parameter name="localMemberHost">{{ ansible_eth0.ipv4.address }}</parameter>
+        <parameter name="localMemberHost">{{ ansible_eth1.ipv4.address }}</parameter>
         <!--
             The bind adress of this member. The difference between localMemberHost & localMemberBindAddress
             is that localMemberHost is the one that is advertised by this member, while localMemberBindAddress
@@ -493,8 +493,8 @@
        -->
         <members>
             {% for host in groups['ei'] %}
-        {% set member_ip = hostvars[host]['ansible_eth0']['ipv4']['address'] %}
-        {% if (ansible_eth0.ipv4.address != member_ip) %}
+        {% set member_ip = hostvars[host]['ansible_eth1']['ipv4']['address'] %}
+        {% if (ansible_eth1.ipv4.address != member_ip) %}
             <member>
                 <hostName>{{ member_ip }}</hostName>
                 <port>4100</port>

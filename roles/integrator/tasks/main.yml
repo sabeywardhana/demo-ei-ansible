@@ -84,5 +84,10 @@
     - name: "Start wso2ei-integrator as a service"
       command: systemctl start wso2ei-integrator.service
 
+    - name: "Restart wso2ei-integrator"
+      command: systemctl restart wso2ei-integrator.service
+      tags:
+        - restart
+
     become: true
     become_user: root
