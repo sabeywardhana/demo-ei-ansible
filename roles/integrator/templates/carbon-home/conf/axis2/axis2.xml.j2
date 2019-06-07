@@ -494,12 +494,10 @@
         <members>
             {% for host in groups['ei'] %}
         {% set member_ip = hostvars[host]['ansible_eth1']['ipv4']['address'] %}
-        {% if (ansible_eth1.ipv4.address != member_ip) %}
             <member>
                 <hostName>{{ member_ip }}</hostName>
                 <port>4100</port>
             </member>
-            {% endif %}
         {% endfor %}
         </members>
         <!--
