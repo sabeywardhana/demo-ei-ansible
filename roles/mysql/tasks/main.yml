@@ -17,7 +17,7 @@
 
     - name: Copy REGISTRY_LOCAL3 database template
       copy:
-        src: "{{ product_package_location }}/{{ mysql_localregdb_script }}"
+        src: "{{ mysql_file_location }}/{{ mysql_localregdb_script }}"
         dest: "{{ ansible_home }}/{{ mysql_localregdb_script }}"
         mode: 0755
 
