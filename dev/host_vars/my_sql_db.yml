@@ -5,5 +5,5 @@ mysql_db_root_user: root
 mysql_db_root_password: root
 
 ansible_home: /home/ansible
-mysql_file_location: files/mysql
+mysql_file_location: files
 mysql_localregdb_script: local-reg3-db.sql

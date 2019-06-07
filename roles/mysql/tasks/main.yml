@@ -23,9 +23,13 @@
 
     - name: Source/import the mysql_localregdb_script
       mysql_db:
-       name: REGISTRY_LOCAL3
-       state: import
-       target: "{{ ansible_home }}/{{ mysql_localregdb_script }}"
+        login_host: "{{mysql_db_host}}"
+        login_port: "{{mysql_db_port}}"
+        login_password: "{{mysql_db_root_password}}"
+        login_user: "{{mysql_db_root_user}}"
+        name: REGISTRY_LOCAL3
+        state: import
+        target: "{{ ansible_home }}/{{ mysql_localregdb_script }}"
 
     become: true
     become_method: sudo
