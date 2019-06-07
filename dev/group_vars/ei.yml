@@ -96,5 +96,6 @@ hazelcast_cluster_enabled: true
 hazelcast_cluster_membership_scheme: wka
 
 rsync_user: ansible
+setup_path: /usr/lib/wso2
 
 
