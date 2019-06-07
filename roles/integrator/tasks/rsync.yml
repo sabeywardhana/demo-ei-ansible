@@ -10,3 +10,6 @@
       src: nodes-list.txt.j2
       dest: "{{ setup_path }}/{{ product_name }}/{{ product_version }}/nodes-list.txt"
       mode: 0755
+
+  become: true
+  become_user: root
