@@ -6,7 +6,7 @@
         src: "files/{{ item.0 }}"
         dest: "{{ nginx_conf_server_location }}"
       with_together:
-        - [ 'nginx_http_file', 'nginx_https_file' ]
+        - [ '{{ nginx_http_file }}', '{{ nginx_https_file }}' ]
 
     - name: "ReStart nginx"
       command: service nginx restart
