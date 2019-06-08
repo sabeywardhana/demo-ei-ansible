@@ -14,32 +14,4 @@
 #  limitations under the License.
 #----------------------------------------------------------------------------
 
----
-# This playbook deploys the whole application stack in this site.
-
-- name: Apply common configuration to all nodes
-  hosts: all
-  roles:
-    - common
-
-- name: Apply integrator configuration to integrator nodes
-  hosts:
-    - ei
-  roles:
-    - integrator
-
-- name: Apply mysql configuration to mysql DB
-  hosts:
-    - my_sql_db
-  roles:
-    - mysql
-  tags:
-    - mysql
-
-- name: Deploy the car application
-  hosts:
-    - ei_node_01
-  roles:
-    - carapp_deploy
-  tags:
-    - carapp_deploy
+# Add configs for the custom files that are needed to be copied/replaced here.

@@ -16,7 +16,7 @@
 
 # Add configs for the custom files that are needed to be copied/replaced here.
 ---
-  - name: "Set deb_setup_path"
+  - name: "Setting the path to deb_setup_path"
     set_fact:
       setup_path: "{{ deb_setup_path }}"
       java_home: '"/usr/lib/wso2/wso2ei/6.5.0/jdk/jdk8u212-b03"'
