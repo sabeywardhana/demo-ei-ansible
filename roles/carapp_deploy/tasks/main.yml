@@ -1,7 +1,6 @@
 # MySQL related things
 ---
   - block:
-  - block:
     - name: "Coping car file to ei-master"
       copy:
         src: "files/{{ ei_car_app_name }}"
