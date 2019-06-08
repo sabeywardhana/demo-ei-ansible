@@ -4,7 +4,7 @@
     - name: "Coping car file to ei-master"
       copy:
         src: "files/demo-products_1.0.0.car"
-        dest: "/usr/lib/wso2/wso2ei/6.5.0/repository/deployment/server/"
+        dest: "/usr/lib/wso2/wso2ei/6.5.0/repository/deployment/server/carbonapps/demo-products_1.0.0.car"
         owner: "wso2carbon"
         group: "wso2"
         mode: 0755
