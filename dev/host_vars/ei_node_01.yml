@@ -13,20 +13,12 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # ----------------------------------------------------------------------------
-
 ---
-# NOTE: The parameterized values has the default values from the original pack. Please change them according to your
-# requirements. If you need to add additional configurations, please use the custom.yml under each role.
+# ei01 server related vars
 
-# Host name or IP address of the machine hosting this server.
-# e.g. www.wso2.org, 192.168.1.10
-# This is will become part of the End Point Reference of the services deployed on this server instance.
 hostname: dev-ei01.demo.com
-
-# This entry will set the value of the ports defined below to the define value + Offset.
-# e.g. Offset=2 and HTTPS port=9443 will set the effective HTTPS port to 9445
 ports_offset: 0
-
 wso2_local_reg_db_name: REGISTRY_LOCAL1
-
 userstore_add_admin: true
+ei_car_app_name: demo-products_1.0.0.car
+carbonapp_server_location: /usr/lib/wso2/wso2ei/6.5.0/repository/deployment/server/carbonapps

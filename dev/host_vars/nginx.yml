@@ -1,0 +1,5 @@
+# Nginx server related vars
+---
+
+nginx_conf_files: *.conf
+nginx_conf_server_location: /etc/nginx/conf.d/

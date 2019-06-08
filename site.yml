@@ -29,6 +29,7 @@
     - integrator
 
 - name: Apply mysql configuration to mysql DB
+  gather_facts: no
   hosts:
     - my_sql_db
   roles:
@@ -43,3 +44,12 @@
     - carapp_deploy
   tags:
     - carapp_deploy
+
+- name: Configuering Nginx
+  gather_facts: no
+  hosts:
+    - nginx
+  roles:
+    - nginx
+  tags:
+    - nginx

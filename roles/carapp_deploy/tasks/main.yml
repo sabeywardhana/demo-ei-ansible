@@ -1,10 +1,11 @@
 # MySQL related things
 ---
   - block:
+  - block:
     - name: "Coping car file to ei-master"
       copy:
-        src: "files/demo-products_1.0.0.car"
-        dest: "/usr/lib/wso2/wso2ei/6.5.0/repository/deployment/server/carbonapps/demo-products_1.0.0.car"
+        src: "files/{{ ei_car_app_name }}"
+        dest: "{{ carbonapp_server_location }}/{{ ei_car_app_name}} "
         owner: "wso2carbon"
         group: "wso2"
         mode: 0755

@@ -1,0 +1,14 @@
+# NginX related configs
+---
+  - block:
+    - name: "Coping the config file"
+      copy:
+        src: "files/{{ nginx_conf_files }}"
+        dest: "{{ nginx_conf_server_location }} "
+
+    - name: "ReStart nginx"
+      command: service nginx restart
+
+    become: true
+    become_method: sudo
+    become_user: root

@@ -10,3 +10,6 @@ ei_node_02
 
 [my_sql_db]
 my_sql_db ansible_host=192.168.50.84 ansible_user=ansible
+
+[nginx]
+nginx ansible_host=192.168.50.83 ansible_user=ansible
