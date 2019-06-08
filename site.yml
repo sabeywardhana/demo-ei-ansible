@@ -18,7 +18,7 @@
 # This playbook deploys the whole application stack in this site.
 
 - name: Apply common configuration to all nodes
-  hosts: all
+  hosts: ei
   roles:
     - common
 
@@ -29,7 +29,6 @@
     - integrator
 
 - name: Apply mysql configuration to mysql DB
-  gather_facts: no
   hosts:
     - my_sql_db
   roles:
