@@ -19,14 +19,14 @@ fi
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
-echo $SCRIPTPATH
+echo $ei_home_folder_path
   
-for x in `cat ${SCRIPTPATH}/nodes-list.txt`
+for x in `cat $ei_home_folder_path/nodes-list.txt`
 do
 dt=$(date '+%d/%m/%Y %H:%M:%S')
-echo Starting the rsync =======================> $dt >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
+echo ====- Starting the rsync =======================: $dt >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
 echo Syncing $x;
 rsync --delete -arve "ssh -i /home/wso2carbon/.ssh/id_rsa -o StrictHostKeyChecking=no" $ei_server_dir $x >> $ei_home_folder_path/carbon-rsync-logs/logs.txt
 dt=$(date '+%d/%m/%Y %H:%M:%S')
-echo Ended the rsync ==========================> $dt >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
+echo ====- Ended the rsync ==========================: $dt >> $ei_home_folder_path/carbon-rsync-logs/logs.txt;
 done
