@@ -4,10 +4,10 @@
     - name: "Coping car file to ei-master"
       copy:
         src: "files/{{ ei_car_app_name }}"
-        dest: "{{ carbonapp_server_location }}/{{ ei_car_app_name}} "
+        dest: "{{ carbonapp_server_location }}/{{ ei_car_app_name }}"
         owner: "wso2carbon"
         group: "wso2"
-        mode: 0755
+        mode: 0644
 
     become: true
     become_method: sudo
