@@ -1,11 +1,6 @@
 # MySQL related things
 ---
   - block:
-    - name: Adds Python MySQL support on Debian/Ubuntu 1
-      command: apt-get install python-pip -y
-
-    - name: Adds Python MySQL support on Debian/Ubuntu 2
-      command: sudo pip3 install PyMySQL
 
     # DB Creation of REGISTRY_LOCAL3 DB
     - name: Create a new database with name 'REGISTRY_LOCAL3'
