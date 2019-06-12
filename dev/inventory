@@ -4,13 +4,9 @@ ei_node_01 ansible_host=192.168.50.81 ansible_user=ansible
 [ei_node_02]
 ei_node_02 ansible_host=192.168.50.82 ansible_user=ansible
 
-[ei_node_03]
-ei_node_03 ansible_host=192.168.50.87 ansible_user=ansible
-
 [ei:children]
 ei_node_01
 ei_node_02
-ei_node_03
 
 [my_sql_db]
 my_sql_db ansible_host=192.168.50.84 ansible_user=ansible
